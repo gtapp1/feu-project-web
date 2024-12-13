@@ -1,0 +1,356 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-right: 150px;
+    margin-top: 50px;
+    margin-left: 100px;
+    animation: intro ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+    color: rgb(219, 219, 35);
+}
+
+.main-title {
+    font-size: 2rem;
+    margin-bottom: -60px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: 2rem;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    border-radius: 2rem;
+    z-index: -1;  /* Ensures the image is behind the content */
+    filter: brightness(0.7);  /* Adjust brightness */
+}
+
+/* Apply different images to each card */
+.card[for="c1"]::before {
+    background-image: url('webpicvid/Firstweek1.jpg');
+}
+
+.card[for="c2"]::before {
+    background-image: url('webpicvid/Unwinding.jpg');
+}
+
+.card[for="c3"]::before {
+    background-image: url('webpicvid/Challenges.jpg');
+}
+
+.card[for="c4"]::before {
+    background-image: url('webpicvid/Sample.jpg');
+}
+
+.card[for="c5"]::before {
+    background-image: url('webpicvid/Studyhabit.jpg');
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 45px; /* Reduced the width of the circle */
+    height: 45px; /* Set height to match the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100px; /* Increased height to give space for both elements */
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p {
+    color: white;
+    padding-top: 10px;  /* Adjust padding to move p above */
+    margin-bottom: 5px; /* Space between p and h4 */
+}
+
+.description h4 {
+    text-transform: uppercase;
+    margin-top: 0; /* No need for margin-top */
+    padding-top: 0; /* Remove padding if any */
+    line-height: 1.2; /* Adjust line-height to prevent clipping */
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrappers {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    margin: 20px;
+}
+
+.single-box {
+    width: 400px; 
+    height: 400px;
+    perspective: 1200px;
+}
+
+.box-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-200px); 
+    transition: all 1s;
+}
+
+.sides {
+    position: absolute;
+    width: 400px; 
+    height: 400px;
+    text-align: center;
+}
+
+.sides-1 {
+    transform: rotate(0deg) translateZ(200px);
+    z-index: 2;
+    background-size: cover;
+    background-position: center center;
+}
+
+.sides-2 {
+    color: black;
+    background-color: white;
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.box:hover .box-content {
+    transform: translateZ(-200px) rotateY(-90deg);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content h2 {
+    font-family: alfa slab one;
+    font-size: 28px; 
+}
+
+.content p {
+    font-size: 17px;
+    line-height: 30px;
+    font-family: montserrat;
+}
+
+.Info-container {
+    width: 400px;  
+    height: 400px; 
+    padding: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.Info-container h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.Info-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 16px;
+    overflow-y: auto;
+    max-height: 150px;
+    margin: 0;
+}
+
+.Info-item {
+    margin-bottom: 8px;
+    color: black;
+}
+
+.Info-description {
+    font-size: 17px; 
+    line-height: 1.5;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+
+
+/*.Info-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    transform: translateY(-5px);  
+    transition: all 0.3s ease;  
+}*/
+
+.pre-loader {
+    background: black url(webpicvid/icon.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+.btn1, .btn2 {
+    width: 200px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 10px;
+    text-decoration: none;
+    border: 2px solid rgb(219, 219, 35);
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .btn1 {
+    border: none;
+    color: white;
+    border-bottom: solid 2px rgb(219, 219, 35);
+    position: relative; 
+  }
+  
+  .btn1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px; 
+    background-color: rgb(219, 219, 35);
+    transition: width 0.3s ease;
+  }
+  
+  .btn1:hover::after {
+    width: 100%;
+  }
+  
+  
+  .btn2 {
+    border-color: rgb(219, 219, 35);
+  }
+  
+
+  .btn2:hover {
+    background-color: rgb(219, 219, 35); 
+    color: black;
+    border-color: rgb(219, 219, 35);
+  }
+  
+#image3 {
+    background-image: url('webpicvid/Kianpic.jpg');  
+}
+#image2 {
+    background-image: url('webpicvid/Jeffpic.jpg');  
+}   
+#image1 {
+    background-image: url('webpicvid/Luigipic.jpg');  
+}           
+
+@media (max-width:991px) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
